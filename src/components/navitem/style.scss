@@ -1,0 +1,55 @@
+.NavLink {
+	border: none;
+	cursor: pointer;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	background-color: transparent;
+	margin: 0 30px;
+	outline: none;
+	span {
+		color: #16005c;
+		transition: all 0.5s ease;
+		font-size: 14px;
+		font-weight: 600;
+		text-transform: uppercase;
+		position: relative;
+	}
+	span::after {
+		position: absolute;
+		content: "";
+		margin-top: 5px;
+		height: 7px;
+		width: 7px;
+		border-radius: 50%;
+		background-color: #3dbe71;
+		transition: all 0.5s ease;
+		transform: scale(0) translateX(-50%);
+		top: 12px;
+		left: 50%;
+	}
+	&:hover {
+		span {
+			color: #3dbe71;
+		}
+		span::after {
+			transform: scale(1);
+		}
+	}
+}
+
+.activeLink {
+	.NavLink {
+		span {
+			color: #3dbe71;
+		}
+		.greenDot {
+			transform: scale(1);
+		}
+	}
+}
+
+.link {
+	text-decoration: none;
+}

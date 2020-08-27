@@ -1,0 +1,22 @@
+.sideLink {
+	display: block;
+	margin-bottom: 20px;
+	text-decoration: none;
+	span {
+		font-size: 24px;
+		font-weight: 700;
+		color: #fff;
+		transition: all 0.5s ease;
+	}
+	&:hover {
+		span {
+			color: #16005c;
+		}
+	}
+}
+
+.sideActive {
+	span {
+		color: #16005c;
+	}
+}

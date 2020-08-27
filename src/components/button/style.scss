@@ -1,0 +1,16 @@
+.BtnPrimary {
+	border: none !important;
+	border-radius: 32px;
+	padding: 12px 25px;
+	background-color: #3dbe71;
+	cursor: pointer;
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: 500;
+	transition: all 0.5s ease;
+	outline: none !important;
+	&:hover {
+		background-color: #1e8648;
+		color: #fff;
+	}
+}

@@ -1,0 +1,49 @@
+$break-small: 500px;
+$break-medium: 800px;
+$break-large: 1024px;
+$break-xlarge: 1265px;
+
+// creating a uniform mixin for the responsive screens
+@mixin respondTo($screen-size) {
+	@if $screen-size == tiny {
+		@media only screen and (max-width: 450px) {
+			@content;
+		}
+	}
+	@if $screen-size == small {
+		@media only screen and (max-width: $break-small) {
+			@content;
+		}
+	}
+	@if $screen-size == small-medium {
+		@media only screen and (max-width: $break-medium) {
+			@content;
+		}
+	}
+	@if $screen-size == small-medium-only {
+		@media only screen and (min-width: $break-small + 1) and (max-width: $break-medium - 1) {
+			@content;
+		}
+	}
+	@if $screen-size == medium-only {
+		@media only screen and (min-width: $break-medium + 1) and (max-width: $break-large - 1) {
+			@content;
+		}
+	}
+	@if $screen-size == medium {
+		@media only screen and (max-width: $break-large) {
+			@content;
+		}
+	}
+
+	@if $screen-size == large-only {
+		@media only screen and (min-width: $break-large + 1) {
+			@content;
+		}
+	}
+	@if $screen-size == extra-large {
+		@media only screen and (max-width: $break-xlarge) {
+			@content;
+		}
+	}
+}

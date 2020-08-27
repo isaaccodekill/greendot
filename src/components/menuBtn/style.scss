@@ -1,0 +1,83 @@
+@import "../../assets/responsive-helper.scss";
+
+.menuBtn {
+	background-color: transparent;
+	border: none;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	display: none;
+	@include respondTo(medium) {
+		display: flex;
+	}
+	position: fixed;
+	top: 45px;
+	right: 5%;
+	outline: none;
+	z-index: 10;
+
+	.menu {
+		position: relative;
+		width: 32px;
+		height: 4px;
+		background-color: #3dbe71;
+		border-radius: 5px;
+		transition: all 0.5s ease;
+	}
+
+	.menu::before {
+		position: absolute;
+		content: "";
+		width: 32px;
+		height: 4px;
+		background-color: #3dbe71;
+		top: -10px;
+		left: 0;
+		border-radius: 5px;
+		transition: all 0.5s ease;
+	}
+
+	.menu::after {
+		position: absolute;
+		content: "";
+		width: 32px;
+		height: 4px;
+		background-color: #3dbe71;
+		top: 10px;
+		left: 0;
+		border-radius: 5px;
+		transition: all 0.5s ease;
+	}
+
+	&--open {
+		.menu {
+			position: relative;
+			width: 32px;
+			height: 4px;
+			background-color: transparent;
+			border-radius: 5px;
+		}
+
+		.menu::before {
+			position: absolute;
+			content: "";
+			width: 32px;
+			height: 4px;
+			background-color: #fff;
+			top: 0px;
+			border-radius: 5px;
+			transform: rotate(45deg);
+		}
+
+		.menu::after {
+			position: absolute;
+			content: "";
+			width: 32px;
+			height: 4px;
+			background-color: #fff;
+			top: 0px;
+			border-radius: 5px;
+			transform: rotate(-45deg);
+		}
+	}
+}
